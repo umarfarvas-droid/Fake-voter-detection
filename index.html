@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake Voters Detection System</title>
+  <!-- Google Fonts: modern, readable typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Fixed top navigation -->
+  <header class="site-header">
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
+      <a href="#home" class="nav-brand">
+        <span class="nav-brand-full">Fake Voters Detection System</span>
+        <span class="nav-brand-short" aria-hidden="true">FVDS</span>
+      </a>
+
+      <!-- Hamburger: visible on small screens -->
+      <button
+        type="button"
+        class="nav-toggle"
+        id="navToggle"
+        aria-expanded="false"
+        aria-controls="navMenu"
+        aria-label="Open menu"
+      >
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav-links" id="navMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#prototype">Prototype</a></li>
+        <li><a href="#voter-registry">Register</a></li>
+        <li><a href="#qr-verification">QR Verify</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero: title, subtitle, CTA -->
+    <section id="home" class="hero fade-in-section">
+      <div class="hero-inner container">
+        <h1 class="hero-title">Fake Voters Detection System</h1>
+        <p class="hero-subtitle">
+          Protecting election integrity with secure identity checks and intelligent duplicate detection—so every legitimate vote counts.
+        </p>
+        <a href="#about" class="btn btn-primary">Learn More</a>
+      </div>
+    </section>
+
+    <!-- Problem statement -->
+    <section id="about" class="section section-alt fade-in-section">
+      <div class="container">
+        <h2 class="section-title">About the Problem</h2>
+        <p class="section-lead">
+          Fake or duplicate voters undermine trust in democratic processes. Without reliable verification, elections can be skewed by fraudulent registrations, impersonation, and repeated voting under different identities.
+        </p>
+        <ul class="about-list">
+          <li><i class="fas fa-circle-exclamation" aria-hidden="true"></i> Fraudulent or duplicate registrations inflate voter rolls.</li>
+          <li><i class="fas fa-circle-exclamation" aria-hidden="true"></i> Identity impersonation allows ineligible or repeated voting.</li>
+          <li><i class="fas fa-circle-exclamation" aria-hidden="true"></i> Manual checks are slow, error-prone, and hard to scale.</li>
+          <li><i class="fas fa-circle-exclamation" aria-hidden="true"></i> Weak audit trails make it difficult to detect abuse after the fact.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Feature cards -->
+    <section id="features" class="section fade-in-section">
+      <div class="container">
+        <h2 class="section-title">Features</h2>
+        <p class="section-intro">Core capabilities designed for secure, verifiable voting.</p>
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"><i class="fas fa-fingerprint"></i></div>
+            <h3>Biometric Authentication</h3>
+            <p>Bind each voter to strong biometric signals to reduce impersonation and stolen credentials.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"><i class="fas fa-brain"></i></div>
+            <h3>AI Duplicate Detection</h3>
+            <p>Machine learning flags likely duplicates across records, photos, and behavioral patterns.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"><i class="fas fa-qrcode"></i></div>
+            <h3>QR Code Verification</h3>
+            <p>Quick, tamper-aware checks at the polling station using signed QR payloads.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"><i class="fas fa-database"></i></div>
+            <h3>Secure Database</h3>
+            <p>Encrypted storage, access controls, and logging for a defensible audit trail.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prototype flow -->
+    <section id="prototype" class="section section-alt fade-in-section">
+      <div class="container">
+        <h2 class="section-title">Prototype Flow</h2>
+        <p class="section-intro">A simple mock of how a voter moves through the system.</p>
+        <ol class="prototype-steps">
+          <li class="prototype-step">
+            <span class="step-num">1</span>
+            <div class="step-body">
+              <span class="step-icon" aria-hidden="true"><i class="fas fa-id-card"></i></span>
+              <h3>Scan voter</h3>
+              <p>Capture ID or QR and load the voter record at the booth.</p>
+            </div>
+          </li>
+          <li class="prototype-step">
+            <span class="step-num">2</span>
+            <div class="step-body">
+              <span class="step-icon" aria-hidden="true"><i class="fas fa-user-check"></i></span>
+              <h3>Verify identity</h3>
+              <p>Match biometrics or credentials against the authoritative register.</p>
+            </div>
+          </li>
+          <li class="prototype-step">
+            <span class="step-num">3</span>
+            <div class="step-body">
+              <span class="step-icon" aria-hidden="true"><i class="fas fa-clone"></i></span>
+              <h3>Detect duplicate</h3>
+              <p>Run AI and database checks to ensure this vote has not already been cast.</p>
+            </div>
+          </li>
+          <li class="prototype-step">
+            <span class="step-num">4</span>
+            <div class="step-body">
+              <span class="step-icon" aria-hidden="true"><i class="fas fa-check-double"></i></span>
+              <h3>Allow / Reject vote</h3>
+              <p>Approve the ballot or block with a logged reason for auditors.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Voter registry: ID details, local storage, per-voter QR generation -->
+    <section id="voter-registry" class="section fade-in-section">
+      <div class="container">
+        <h2 class="section-title">Voter Registration</h2>
+        <p class="section-intro">
+          Save ID proof details for this prototype. Optionally record simulated <strong>Face ID</strong> and <strong>fingerprint</strong> enrollment. Data is stored only in <strong>this browser</strong> (localStorage)—not for real elections.
+        </p>
+
+        <form class="registry-form" id="registryForm" novalidate>
+          <div class="registry-form-grid">
+            <div class="form-group">
+              <label for="registryFullName">Full name</label>
+              <input type="text" id="registryFullName" name="fullName" required autocomplete="name" placeholder="e.g. Jane Doe">
+            </div>
+            <div class="form-group">
+              <label for="registryIdType">ID proof type</label>
+              <select id="registryIdType" name="idProofType" required>
+                <option value="">Select type</option>
+                <option value="National ID">National ID</option>
+                <option value="Passport">Passport</option>
+                <option value="Driver License">Driver License</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="registryIdNumber">ID proof number</label>
+              <input type="text" id="registryIdNumber" name="idProofNumber" required autocomplete="off" placeholder="Document number">
+            </div>
+            <div class="form-group">
+              <label for="registryPhone">Phone <span class="label-optional">(optional)</span></label>
+              <input type="tel" id="registryPhone" name="phone" autocomplete="tel" placeholder="e.g. +1 555 0100">
+            </div>
+          </div>
+
+          <fieldset class="registry-biometrics">
+            <legend>Biometrics <span class="label-optional">(simulated)</span></legend>
+            <p class="registry-biometrics-hint">
+              For this demo, check the methods “enrolled” for this voter. No real Face ID or fingerprint hardware is used.
+            </p>
+            <div class="registry-checkbox-row">
+              <label class="registry-check-label">
+                <input type="checkbox" id="registryFaceId" name="faceId" value="1">
+                <span class="registry-check-text"><i class="fas fa-face-smile" aria-hidden="true"></i> Face ID</span>
+              </label>
+              <label class="registry-check-label">
+                <input type="checkbox" id="registryFingerprint" name="fingerprint" value="1">
+                <span class="registry-check-text"><i class="fas fa-fingerprint" aria-hidden="true"></i> Fingerprint</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="registry-form-actions">
+            <button type="submit" class="btn btn-primary" id="btnRegistrySave">
+              <i class="fas fa-qrcode" aria-hidden="true"></i> Save &amp; generate QR
+            </button>
+            <button type="button" class="btn btn-secondary" id="btnRegistryClear">
+              Clear form
+            </button>
+          </div>
+        </form>
+
+        <p class="registry-form-msg" id="registryFormMsg" role="status" hidden></p>
+
+        <div class="registry-qr-block">
+          <h3 class="registry-subtitle">Generated QR</h3>
+          <div class="registry-qr-preview" id="registryQrPreview" aria-live="polite">
+            <p class="registry-qr-placeholder" id="registryQrPlaceholder">Register a voter to generate a QR code here.</p>
+            <canvas id="registryQrCanvas" width="220" height="220" hidden></canvas>
+          </div>
+          <div class="registry-qr-download-wrap">
+            <a href="#" class="btn btn-primary registry-download-btn" id="btnRegistryDownload" download="voter-qr.png" hidden>Download QR (PNG)</a>
+          </div>
+        </div>
+
+        <h3 class="registry-subtitle">Registered voters</h3>
+        <div class="registry-table-wrap">
+          <table class="registry-table" id="registryTable">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">ID type</th>
+                <th scope="col">ID number</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Face ID</th>
+                <th scope="col">Fingerprint</th>
+                <th scope="col">Registered</th>
+                <th scope="col">Voted</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="registryTableBody"></tbody>
+          </table>
+          <p class="registry-empty" id="registryEmpty">No voters registered yet.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QR Code voter verification (live camera via html5-qrcode) -->
+    <section id="qr-verification" class="section section-alt fade-in-section">
+      <div class="container">
+        <h2 class="section-title">QR Code Voter Verification</h2>
+        <p class="section-intro">
+          Scan a QR code created with <strong>Register</strong> above. Valid codes verify the voter; a second scan marks a duplicate vote. Random or unknown QRs are rejected as invalid.
+        </p>
+
+        <div class="qr-actions">
+          <button type="button" class="btn btn-primary qr-btn-start" id="btnStartScanner">
+            <i class="fas fa-camera" aria-hidden="true"></i> Start Scanner
+          </button>
+          <button type="button" class="btn btn-secondary qr-btn-stop" id="btnStopScanner" disabled>
+            <i class="fas fa-stop" aria-hidden="true"></i> Stop Scanner
+          </button>
+        </div>
+
+        <p class="qr-loading" id="qrLoading" hidden aria-live="polite">Scanning…</p>
+
+        <div class="qr-scanner-wrap">
+          <div id="qr-reader" class="qr-reader" aria-label="Camera preview for QR scanning"></div>
+        </div>
+
+        <div class="qr-result" id="qrResult" role="status" aria-live="polite" hidden></div>
+        <p class="qr-error" id="qrError" role="alert" hidden></p>
+
+        <div class="webauthn-block">
+          <h3 class="webauthn-title">Device biometrics (WebAuthn)</h3>
+          <p class="section-intro webauthn-intro">
+            Uses your device’s secure authenticator (fingerprint, face unlock, or similar). Raw biometric data never leaves the device.
+            For this demo only, the credential id is stored in <strong>localStorage</strong>; real systems must verify on a <strong>secure backend</strong>.
+          </p>
+          <div class="webauthn-actions">
+            <button type="button" class="btn btn-primary" id="btnWebAuthnVerify">
+              <i class="fas fa-shield-halved" aria-hidden="true"></i> Verify with Biometrics
+            </button>
+          </div>
+          <p class="webauthn-loading" id="webauthnLoading" hidden aria-live="polite">
+            Waiting for biometric authentication…
+          </p>
+          <div
+            class="webauthn-result"
+            id="webauthnResult"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact form -->
+    <section id="contact" class="section fade-in-section">
+      <div class="container container-narrow">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-intro">Send a message about the project or partnership.</p>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="contactName">Name</label>
+            <input type="text" id="contactName" name="name" required autocomplete="name" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="email" required autocomplete="email" placeholder="you@example.com">
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" rows="5" required placeholder="Your message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-text"><strong>Fake Voters Detection System</strong> — Election security prototype</p>
+      <p class="footer-meta">&copy; <span id="footerYear"></span></p>
+    </div>
+  </footer>
+
+  <!-- QR code generation (browser build) -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <!-- html5-qrcode: camera-based QR scanning -->
+  <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
